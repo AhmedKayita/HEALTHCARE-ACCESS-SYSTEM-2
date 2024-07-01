@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pediatric Care Services</title>
+    <style>
+        body{
+            padding: 50px;
+            display: grid;
+             place-items: center;
+             height: 100vh;
+						 background-color: antiquewhite;
+        }
+        .service-container {
+            display: flex;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            width: 70%;
+            
+
+            
+        }
+        .service-text {
+            flex: 1;
+            padding-right: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .service-text h2 {
+            margin-bottom: 10px;
+        }
+        .service-text p,
+        .service-text ul {
+            margin-bottom: 10px;
+        }
+        .slideshow {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            
+            border-radius: 20px;
+            
+            
+            
+        }
+        .slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.5s;
+            opacity: 0; 
+        }
+        .slideshow .img-active {
+            opacity: 1; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Pharmacutical services</h1>
+    
+    <div class="service-container">
+        <div class="service-text">
+            <h2>
+						<a href="#">All medications for you</a>	
+						</h2>
+            <p>we not only provide better health services but also do wholesales all you hav to do is vist our shopping cart and order all your medications needed</p>
+            <ul>
+                <li>we deliver to all medications at your step</li>
+                <li>our team offers e medical prescription</li>
+                <li>when you treat with us, their is free medication until full recovery</li>
+            </ul>
+        </div>
+        <div class="slideshow">
+            <img src="allimages/allmedication/s1.jpg" class="img-active">
+            <img src="allimages/allmedication/s2.jpg">
+            <img src="allimages/allmedication/s4.jpg">
+        </div>
+    </div>
+
+    <div class="service-container">
+        <div class="service-text">
+            <h2>
+							<a href="#">immunastion</a> 
+						</h2>
+            <p>we do immunisation in our hospitals for free. this is because we believe that children are a backborne of our nations. health children, health generations.
+               
+                </p>
+            <ul>
+                <li>we imunise children below 6years</li>
+                <li>we do follow ups on the imunised babies to ensure better health</li>
+                <li>we do vaccinations of polio, tuberclosis, and we teach moms best childhood raising techniques</li>
+            </ul>
+        </div>
+        <div class="slideshow">
+            <img src="allimages/allmedication/s5.jpg" class="img-active">
+            <img src="allimages/allmedication/s6.jpg">
+            <img src="allimages/allmedication/s7.jpg">
+        </div>
+    </div>
+
+    <div class="service-container">
+        <div class="service-text">
+            <h2>
+						<a href="#">Connect to healthcare Access</a>	
+						</h2>
+            <p>Through your mobile phone, connect to any doctor with us and attain pharmacy serives. dont be a captive of poor health</p>
+            <ul>
+                <li>we offer medical discounts to all patients at all our pharmacies</li>
+                <li>Guidence and councilling is also available, both on e-platforms</li>
+                <li>self medication is always bad, seek a medical doctor before anything else</li>
+            </ul>
+        </div>
+        <div class="slideshow">
+            <img src="allimages/allmedication/s9.jpg" class="img-active">
+            <img src="allimages/allmedication/s6.jpg">
+            <img src="allimages/allmedication/sA.jpg">
+        </div>
+    </div>
+
+    
+    <script>
+       
+        const slideshows = document.querySelectorAll('.slideshow');
+        slideshows.forEach(slideshow => {
+            const imgs = slideshow.querySelectorAll('img');
+            let currentImg = 0; 
+            imgs[currentImg].classList.add('img-active'); 
+            
+            setInterval(() => {
+                imgs[currentImg].classList.remove('img-active'); 
+                currentImg = (currentImg + 1) % imgs.length; 
+                imgs[currentImg].classList.add('img-active'); 
+            }, 4000); 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Medication Treatment</title>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .mySlides {
+            display: none;
+        }
+        .mySlides img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        .medication-info {
+            margin-bottom: 20px;
+        }
+        .hospital-info {
+            margin-bottom: 20px;
+        }
+        .first-aid-info {
+            margin-bottom: 20px;
+        }
+        .treatment-instructions {
+            margin-bottom: 20px;
+        }
+        .treatment-instructions h2 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        .treatment-instructions p {
+            margin-bottom: 10px;
+        }
+        .treatment-instructions ul {
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        .imagesss{
+            width: 300px;
+        }
+        .start-medication-btn{
+            height: 35px;
+        }
+        
+
+        
+            
+      
+      * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: whitesmoke;
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      padding: 3rem 1rem;
+
+    }
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background-color: aquamarine;
+      
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      color: blue;
+      
+    }
+    .col {
+      flex: 1 1 300px;
+      margin-right: 1rem;
+      
+    }
+    .col:last-child {
+      margin-right: 0;
+    }
+    .col h3 {
+      color: #ff3366;
+      margin-bottom: 1rem;
+      position: relative;
+      font-size: 1.5rem;
+    }
+    .col h3::after {
+      content: '';
+      height: 3px;
+      width: 50px;
+      background-color: #ff3366;
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    .col h3:hover::after {
+      width: 30px;
+    }
+    .col .social a i {
+      color: #ff3366;
+      font-size: 1.5rem;
+      margin-right: 10px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .col .social a i:hover {
+      transform: scale(1.3);
+      filter: grayscale(25%);
+    }
+    .col .links a {
+      color: blue;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .col .links a:hover {
+      transform: translateX(-5px);
+      color: #ff3366;
+    }
+    .col .contact-details {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .col .contact-details i {
+      font-size: 1.2rem;
+      margin-right: 10px;
+      color: #ff3366;
+    }
+    .form {
+      display: flex;
+      align-items: center;
+    }
+    .form input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .form button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #ff3366;
+      color: white;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .col {
+        flex: 1 1 100%;
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+        
+      }
+    }
+    .logo{
+        width: 100px;
+    }
+    .followimages{
+        width: 30px;
+    }
+    .followimage{
+        display: flex;
+        flex-direction: column;
+    }
+    
+        
+
+    
+    .startbuton {
+        background-color: white;
+        border-color: rgb(96, 119, 138);
+        border-style: solid;
+        border-width: 1px;
+        color: rgb(78, 78, 206);
+        height: 38px;
+        width: 62;
+        border-radius: 2px;
+        cursor: pointer;
+        transition: background-color 0.15s,
+        color 0.1s;
+        font-weight: 700;
+
+    }
+       
+    .startMedication a{
+        text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-style: none;
+        background-color: greenyellow;
+        border-color: rgb(96, 119, 138);
+        border-style: solid;
+        border-width: 1px;
+        color: rgb(78, 78, 206);
+        height: 38px;
+        width: 62;
+        border-radius: 2px;
+        cursor: pointer;
+        transition: background-color 0.15s,
+        color 0.1s;
+        font-weight: 700;
+    }
+    
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Start Medication Treatment</h1>
+        
+        
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img  class="imagesss" src="allimages/div-image.jpg" alt="Medication 1">
+                <div class="text">Medication 1 - Description goes here</div>
+            </div>
+            <div class="mySlides">
+                <img src="allimages/allmedication/s9.jpg" alt="Medication 2">
+                <div class="text">Medication 2 - Description goes here</div>
+            </div>
+            <div class="mySlides">
+                <img src="allimages/black.jpeg" alt="Medication 3">
+                <div class="text">Medication 3 - Description goes here</div>
+            </div>
+            
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        
+        
+        <div class="medication-info">
+            <h2>Medication Information</h2>
+            <p>For all our medications its good to first consult a doctor before any medication as this can be as helpful as getting to know your medical situation so well for the right medicine</p>
+        </div>
+        
+        
+        <div class="hospital-info">
+            <h2>Our hospitals</h2>
+            <ul>
+                <li><strong>mulago Hospital</strong>  kampala, wandegeya, mulago</li>
+                <li><strong>Rubaga Hospital</strong> kampala, Rubaga</li>
+                <li><strong>Gulu Referral Hospital</strong> Gulu, kapito upper westnile</li>
+                <li><strong>All saints Hospital</strong>  Kasese, bidakore</li>
+                <li><strong>Mount Zoin Hospital</strong> Jinja</li>
+                <li><strong>Usambara community Hospital</strong> mbarara, libmwe</li>
+                
+                
+                
+            </ul>
+        </div>
+        
+        
+        <div class="first-aid-info">
+            <h2>First Aid Instructions</h2>
+            <p>for any first aid medication, always first pray and start first aid with confidence</p>
+            <ul>
+                <li>for snake bite, tie slightly upper of the bitten part such that the part where the snake has bitten is below. this is so to stop poison spread to other areas of the body</li>
+                <li>for flu, drink alot of water</li>
+                <li>contact the nearest hospital</li>
+            </ul>
+        </div>
+        
+        
+        <div class="treatment-instructions">
+            <h2>Self-Treatment Following Doctor's Instructions</h2>
+            <p>It's important to follow your doctor's instructions carefully when self-treating. Here are some general guidelines:</p>
+            <ul>
+                <li>Take medications as prescribed, at the correct times and dosages.</li>
+                <li>Monitor your symptoms and report any changes to your doctor.</li>
+                <li>Avoid activities or substances that may interfere with your medication.</li>
+                <li>Keep emergency contact information handy in case of severe reactions.</li>
+            </ul>
+            <p>For specific conditions or medications, consult with your healthcare provider for personalized advice.</p>
+        </div>
+        
+        <button class="start-medication-btn" onclick="startMedication()">
+            <a  class="startbuton" href="continuation.html">Start Medication</a> 
+        </button>
+    </div>
+    <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <img  src="allimages/logo.jpg" alt="Hospital Logo" class="logo">
+              <p>We are here because of you. Strong nations in health.</p>
+              <div class="social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="col">
+              <h3>with us</h3>
+              <div class="links">
+                <a href="reportmisconduct.html">Report misconduct</a>
+                <a href="rateus.html">rate us</a>
+                <a href="#">Pattern withus</a>
+                <a href="#">learn more</a>
+              </div>
+            </div>
+            <div class="col">
+              <h3>Links</h3>
+              <div class="links">
+                <a href="about-us.html">About</a>
+                <a href="dentalcare.html">Services</a>
+                <a href="terms .html">Our Policy</a>
+                <a href="contactus.html">Help</a>
+              </div>
+            </div>
+            <div class="col">
+              <h3>Address</h3>
+              <div class="contact-details">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Kampala,<br>Makerere Avenue, <br>Street Kasawo, <br>Kikoni</p>
+              </div>
+              <div class="contact-details">
+                <i class="fas fa-phone-alt"></i>
+                <p>+256 709 167 919</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form">
+              <form action="">
+                <input type="email" placeholder="Email us here...">
+                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+              </form>
+              
+            </div>
+            <div class="follow">
+                <p>follow us</p>
+                <div class="followimage">
+                    <a href="0709167919"> <img  class="followimages" src="allimages/twiterlogo.png"></a>
+                    <a href="0709167919"><img class="followimage" src="allimages/watsap.png"></a>
+                    <a href="0709167919"><img class="followimage" src="allimages/facebook.png"></a>
+                    <a href="0709167919"><img class="followimage" src="allimages/youtube.png"></a>
+    
+
+                </div>
+                
+            </div>
+              
+            
+          </div>
+          
+        </div>
+       
+        
+      </footer>
+
+    
+    <script>
+        var slideIndex = 0;
+        var timeout;
+
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex - 1].style.display = "block";  
+            timeout = setTimeout(showSlides, 5000); 
+        }
+
+        function plusSlides(n) {
+            clearTimeout(timeout);
+            slideIndex += n;
+            showSlides();
+        }
+
+        
+        function startMedication() {
+            
+            window.location.href = document.querySelector('#start-medication-btn a').getAttribute('href');
+        }
+    </script>
+</body>
+</html>
